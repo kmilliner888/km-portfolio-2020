@@ -1,24 +1,17 @@
 import React from 'react';
 import './App.css';
-import Navigation from './Components/Navigation';
-import Header from './Components/Header';
-import About from './Components/About/About';
-import Projects from './Components/Projects/Projects';
-import Interests from './Components/Interests';
-import Social from './Components/Social';
-import Footer from './Components/Footer';
+import { Route } from 'react-router-dom';
+import { Navigation, Home, About, Projects }  from './Components';
 
-function App() {
+
+
+const App = () => {
   return (
     <div className="App">
-      <Navigation />
-      <Header />
-      <About />
-      <Projects />
-      <Interests />
-      <Social />
-      <Footer />
-      
+        <Navigation />
+        <Route exact path='/' component={Home}></Route>
+        <Route path='/about' component={About}></Route>
+        <Route path='/projects' component={Projects}></Route>
     </div>
   );
 }
